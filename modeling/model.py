@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class HARmodel(nn.Module):
-    """Model for human-activity-recognition."""
+    """HAR Model adapted for catheter manipulation skills."""
     def __init__(self, input_size, num_classes):
         super().__init__()
         #print(input_size)
@@ -13,9 +13,9 @@ class HARmodel(nn.Module):
             nn.ReLU(),    #激励层
             nn.Dropout(),
 
-            #nn.Conv1d(64, 64, 5),
-            #nn.ReLU(),
-            #nn.Dropout(),
+            nn.Conv1d(64, 64, 5),
+            nn.ReLU(),
+            nn.Dropout(),
 
             nn.Conv1d(64, 64, 2),   #2
             nn.ReLU(),
